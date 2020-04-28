@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from sympy import fps,lambdify
+from sympy import Symbol
 
 # comparison between the analytical expression of the component x1 of the angular momentum and its second order power series expansion
 
@@ -30,22 +32,39 @@ def x1PSE(x2,x3,I):
     return pse
 
 
-xvalues=[]
-xanal=[]
-xpse=[]
+def myfx(x,I):
+    fx=I*(1-np.power(x,2)/(2.0*np.power(I,2)))
+    return fx
 
-#first axis quantization
-I=9.5
-theta=np.pi/6
-fi=np.pi/9
-for r in np.arange(0,I,0.1):
-    xvalues.append(r)
-    x2=AM_Components(r,theta,fi)[1][0]
-    x3=AM_Components(r,theta,fi)[2][0]
-    x1anal=x1AM(x2,x3,r)
-    x1pse=x1PSE(x2,x3,r)
-    xanal.append(x1anal)
-    xpse.append(x1pse)
+def plotAM(I):
+    xs=[]
+    ys=[]
+    x=Symbol('x')
+    for j in np.arange(-15,15,0.1):
+        xs.append(x)
+        series=fps(myfx(x,I)).truncate(3)
+        print(series)
+    # plt.plot(xs,ys,'r-')
+    # plt.savefig("series.pdf",bbox_inches="tight")
 
-plt.plot(xvalues,xanal,'r-',xvalues,xpse,'b--')
-plt.savefig("x1Approx.pdf",bbox_inches="tight")
+plotAM(4)
+
+# xvalues=[]
+# xanal=[]
+# xpse=[]
+
+# #first axis quantization
+# I=9.5
+# theta=np.pi/6
+# fi=np.pi/9
+# for r in np.arange(0,I,0.1):
+#     xvalues.append(r)
+#     x2=AM_Components(r,theta,fi)[1][0]
+#     x3=AM_Components(r,theta,fi)[2][0]
+#     x1anal=x1AM(x2,x3,r)
+#     x1pse=x1PSE(x2,x3,r)
+#     xanal.append(x1anal)
+#     xpse.append(x1pse)
+
+# plt.plot(xvalues,xanal,'r-',xvalues,xpse,'b--')
+# plt.savefig("x1Approx.pdf",bbox_inches="tight")

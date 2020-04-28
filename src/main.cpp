@@ -94,8 +94,8 @@ sphericalCoordinates quantization(int k, double r, double theta, double fi)
     else if (k == 2)
     {
         am->x2 = r * cos(theta);
-        am->x1 = r * sin(theta) * cos(fi);
-        am->x3 = r * sin(theta) * sin(fi);
+        am->x1 = r * sin(theta) * sin(fi);
+        am->x3 = r * sin(theta) * cos(fi);
     }
     else if (k == 3)
     {
@@ -109,8 +109,8 @@ sphericalCoordinates quantization(int k, double r, double theta, double fi)
 void CalculateEnergies(const int axis)
 {
     //constants
-    const double spin = 2.0;
-    const double theta = 30.0;
+    const double spin = 9.5;
+    const double theta = 45.0;
     double A1, A2, A3;
 
     auto u = [&](auto x) {
@@ -133,8 +133,8 @@ void CalculateEnergies(const int axis)
     {
     case 1:
         A1 = 1.0;
-        A2 = 3.0;
-        A3 = 6.0;
+        A2 = 6.0;
+        A3 = 3.0;
         I = quantization(axis, spin, thetaSph, fiSph);
         std::cout << u(spin) << " " << v0(spin);
         newline();
@@ -147,8 +147,8 @@ void CalculateEnergies(const int axis)
         break;
     case 2:
         A2 = 1.0;
-        A1 = 6.0;
-        A3 = 3.0;
+        A1 = 3.0;
+        A3 = 6.0;
         I = quantization(axis, spin, thetaSph, fiSph);
         std::cout << u(spin) << " " << v0(spin);
         newline();
