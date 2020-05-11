@@ -50,25 +50,40 @@ mois1 = (89, 12, 48)
 mois2 = (6, 0.25, 4)
 mois3 = (1.90, 0.64, 0.18)
 
+# alternative mois for obtaining ellipse-like trajectories for the 3-axis quantization
+# the 3-axis is the axis with the largest moment of inertia
+mois1_alternative = (29, 10, 1)
+mois2_alternative = (20, 26,9)
+mois3_alternative = (7, 12, 23)
+
 theta1 = -71.0
 theta2 = 77.0
 theta3 = 55.0
 
-axes = (inertiaFactors(mois1), mois2, mois3)
-thetas = (theta1, theta2, theta3)
+
+theta1_alternative = -13
+theta2_alternative = -66
+theta3_alternative = -115
+
+# axes = (inertiaFactors(mois1), mois2, mois3)
+
+# alternative axes using the mois which give elliptic paraboloid H'
+axes = (inertiaFactors(mois1_alternative),
+        inertiaFactors(mois2_alternative), inertiaFactors(mois3_alternative))
+
+# thetas = (theta1, theta2, theta3)
+
+thetas = (theta1_alternative, theta2, theta3_alternative)
 plotnames = ("1axis-quant.pdf", "2axis-quant.pdf", "3axis-quant.pdf")
 
-print(u(9.5, axes[0][0], axes[0][1], axes[0][2], thetas[0]),
-      v0(9.5, axes[0][0], axes[0][1], thetas[0]))
-# print( axes[0][0],axes[0][1],axes[0][2] )
+# print(u(9.5, axes[0][0], axes[0][1], axes[0][2], thetas[0]),v0(9.5, axes[0][0], axes[0][1], thetas[0]))
+print(axes[0][0], axes[0][1], axes[0][2])
 
-print(u(9.5, axes[1][0], axes[1][1], axes[1][2], thetas[1]),
-      v0(9.5, axes[1][0], axes[1][1], thetas[1]))
-# print( axes[1][0],axes[1][1],axes[1][2] )
+# print(u(9.5, axes[1][0], axes[1][1], axes[1][2], thetas[1]),v0(9.5, axes[1][0], axes[1][1], thetas[1]))
+print( axes[1][0],axes[1][1],axes[1][2] )
 
-print(u(9.5, axes[2][0], axes[2][1], axes[2][2], thetas[2]),
-      v0(9.5, axes[2][0], axes[2][1], thetas[2]))
-# print( axes[2][0],axes[2][1],axes[2][2] )
+# print(u(9.5, axes[2][0], axes[2][1], axes[2][2], thetas[2]),v0(9.5, axes[2][0], axes[2][1], thetas[2]))
+print(axes[2][0], axes[2][1], axes[2][2])
 
 
 def avg(array):
