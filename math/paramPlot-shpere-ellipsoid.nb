@@ -1,0 +1,99 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2771,         91]
+NotebookOptionsPosition[      2007,         68]
+NotebookOutlinePosition[      2350,         83]
+CellTagsIndexPosition[      2307,         80]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Parametric plot for the a.m. sphere and energy ellipsoid", "Title",
+ CellChangeTimes->{{3.798003828409487*^9, 
+  3.798003846869132*^9}},ExpressionUUID->"f0eafb7c-9d9c-416a-b78f-\
+08b8a861d22a"],
+
+Cell[CellGroupData[{
+
+Cell["Constant values", "Chapter",
+ CellChangeTimes->{{3.798003913368833*^9, 
+  3.798003917278214*^9}},ExpressionUUID->"6c7f6a3f-1983-4844-9560-\
+c36a655a0107"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"R", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A2", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A3", "=", "6"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.798003868371951*^9, 3.798003904856064*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"18c745fb-6589-4fd6-889d-33cd3e9a0b22"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Spherical Plot", "Chapter",
+ CellChangeTimes->{{3.798010238454301*^9, 
+  3.7980102425379744`*^9}},ExpressionUUID->"f94a3397-f76d-4d8b-b539-\
+390dbead6d15"],
+
+Cell[BoxData[
+ RowBox[{"SphericalPlot3D", "[", 
+  RowBox[{"R", ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7980102444514217`*^9, 
+  3.7980102608845167`*^9}},ExpressionUUID->"eae2565d-a6fa-4c07-b5a5-\
+7bd8139c739a"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 1035},
+WindowMargins->{{Automatic, -62}, {Automatic, -1080}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 199, 3, 98, "Title",ExpressionUUID->"f0eafb7c-9d9c-416a-b78f-08b8a861d22a"],
+Cell[CellGroupData[{
+Cell[804, 29, 160, 3, 69, "Chapter",ExpressionUUID->"6c7f6a3f-1983-4844-9560-c36a655a0107"],
+Cell[967, 34, 421, 10, 94, "Input",ExpressionUUID->"18c745fb-6589-4fd6-889d-33cd3e9a0b22"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1425, 49, 161, 3, 69, "Chapter",ExpressionUUID->"f94a3397-f76d-4d8b-b539-390dbead6d15"],
+Cell[1589, 54, 390, 10, 30, "Input",ExpressionUUID->"eae2565d-a6fa-4c07-b5a5-7bd8139c739a"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
